@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Kubeconfig / credentials — never commit real cluster access
+kubeconfig*
+*.kubeconfig
+.env
+**/*secret*.yaml
+**/*secret*.yml
+
+# Editors / OS
+.vscode/
+.DS_Store
+
+# Helm/kubectl render output
+rendered.yaml

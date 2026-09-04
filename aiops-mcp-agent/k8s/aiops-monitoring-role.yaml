@@ -1,0 +1,28 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+
+metadata:
+  name: aiops-monitor-reader
+  namespace: monitoring
+
+rules:
+  # Read monitoring pods, services and events
+  - apiGroups: [""]
+    resources:
+      - pods
+      - pods/log
+      - services
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+
+  # Read monitoring deployments
+  - apiGroups: ["apps"]
+    resources:
+      - deployments
+    verbs:
+      - get
+      - list
+      - watch

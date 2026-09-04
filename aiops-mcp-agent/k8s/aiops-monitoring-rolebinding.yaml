@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding 
+
+metadata:
+  name: aiops-monitor-reader-binding
+  namespace: monitoring
+
+subjects:
+  - kind: ServiceAccount
+    name: aiops-agent
+    namespace: default
+
+roleRef:
+  kind: Role
+  name: aiops-monitor-reader
+  apiGroup: rbac.authorization.k8s.io
+
+
